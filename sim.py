@@ -310,7 +310,10 @@ def gateCalc(circuit, node):
         else:  # Should not be able to come here
             return -1
         return circuit
-
+    elif circuit[node][0] == "BUFF":
+        circuit[node][3] = terminals[0]
+        return circuit
+    
     # If the node is an AND gate output, solve and return the output
     elif circuit[node][0] == "AND":
         # Initialize the output to 1
